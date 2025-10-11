@@ -54,6 +54,12 @@ Sending L2 transaction
 Transaction sent successfully
 ```
 
+残高を取得するスクリプト
+
+```bash
+pnpm run get-balance --nework sepolia
+```
+
 デプロイ
 
 ```bash
