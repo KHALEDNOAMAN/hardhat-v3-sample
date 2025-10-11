@@ -57,7 +57,21 @@ Transaction sent successfully
 残高を取得するスクリプト
 
 ```bash
-pnpm run get-balance --nework sepolia
+pnpm run get-balance --network sepolia
+```
+
+インクリメントメソッドを呼び出すサンプルスクリプト
+
+```bash
+pnpm run increment-counter --network sepolia
+```
+
+```bash
+========================= [START] =========================
+contract Address: 0x59C289A1b7394C93F9CAbb5C4dbB6D084aa1dC7F
+Current count: 5
+After count: 6
+========================= [END] =========================
 ```
 
 デプロイ

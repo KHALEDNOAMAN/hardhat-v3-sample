@@ -1,5 +1,6 @@
-import fs from "node:fs";
-import path from "node:path";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
 /**
  * デプロイされたアドレス情報をjsonファイルから取得するヘルパーメソッド
@@ -9,6 +10,10 @@ import path from "node:path";
  */
 export function getContractAddress(chainId: string, contractName: string): string | undefined {
   try {
+    // ES Modulesで現在のファイルのディレクトリパスを取得
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+
     // ファイルパスを構築
     const filePath = path.join(
       __dirname,
