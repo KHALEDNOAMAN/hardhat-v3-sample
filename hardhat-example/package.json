@@ -5,7 +5,9 @@
   "scripts": {
     "build": "pnpm hardhat build",
     "clean": "pnpm hardhat clean",
-    "test": "pnpm hardhat test"
+    "test": "pnpm hardhat test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-ignition": "^3.0.0",
@@ -13,6 +15,8 @@
     "@types/node": "^22.8.5",
     "forge-std": "github:foundry-rs/forge-std#v1.9.4",
     "hardhat": "^3.0.7",
+    "prettier": "^3.0.0",
+    "prettier-plugin-solidity": "^1.2.0",
     "typescript": "~5.8.0",
     "viem": "^2.30.0"
   }

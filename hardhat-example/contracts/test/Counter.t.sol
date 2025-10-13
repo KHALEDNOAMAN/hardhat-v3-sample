@@ -6,8 +6,8 @@ import {Test} from "forge-std/Test.sol";
 
 /**
  * @title Counterコントラクトのテストコード
- * @author 
- * @notice 
+ * @author
+ * @notice
  */
 contract CounterTest is Test {
   Counter counter;

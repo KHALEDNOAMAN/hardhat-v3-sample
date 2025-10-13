@@ -3,8 +3,8 @@ pragma solidity ^0.8.28;
 
 /**
  * @title Counter コントラクト
- * @author 
- * @notice 
+ * @author
+ * @notice
  */
 contract Counter {
   uint public x;
@@ -13,7 +13,7 @@ contract Counter {
 
   /**
    * 1増やす
-   */  
+   */
   function inc() public {
     x++;
     emit Increment(1);
