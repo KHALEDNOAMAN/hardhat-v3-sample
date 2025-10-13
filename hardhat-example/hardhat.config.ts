@@ -1,10 +1,19 @@
 import type { HardhatUserConfig } from "hardhat/config";
 
 import hardhatToolboxViemPlugin from "@nomicfoundation/hardhat-toolbox-viem";
+import hardhatVerify from "@nomicfoundation/hardhat-verify";
+import hardhatViem from "@nomicfoundation/hardhat-viem";
 import { configVariable } from "hardhat/config";
+import type { HardhatPlugin } from "hardhat/types/plugins";
+
+// タスクファイルのプラグイン設定
+const taskPlugin: HardhatPlugin = {
+  id: "hardhat-task-plugin",
+  tasks: [],
+};
 
 const config: HardhatUserConfig = {
-  plugins: [hardhatToolboxViemPlugin],
+  plugins: [hardhatViem, hardhatToolboxViemPlugin, hardhatVerify, taskPlugin],
   solidity: {
     profiles: {
       default: {
@@ -34,7 +43,17 @@ const config: HardhatUserConfig = {
       type: "http",
       chainType: "l1",
       url: configVariable("SEPOLIA_RPC_URL"),
-      accounts: [configVariable("SEPOLIA_PRIVATE_KEY")],
+      accounts: [configVariable("PRIVATE_KEY")],
+    },
+  },
+  paths: {
+    tests: {
+      solidity: "./contracts/test",
+    },
+  },
+  verify: {
+    blockscout: {
+      enabled: true,
     },
   },
 };

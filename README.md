@@ -1,4 +1,5 @@
 # hardhat-v3-sample
+
 hardhat V3 を検証するためのリポジトリです。
 
 ## 使い方
@@ -7,6 +8,17 @@ help コマンド
 
 ```bash
 pnpm hardhat --help
+```
+
+keystore コマンド
+
+hardhat V3 から keystore コマンドが使えるようになった！
+
+RPC エンドポイントと秘密鍵をセットする
+
+```bash
+pnpm hardhat keystore set SEPOLIA_RPC_URL
+pnpm hardhat keystore set PRIVATE_KEY
 ```
 
 ビルド
@@ -21,7 +33,7 @@ pnpm run build
 pnpm run test
 ```
 
-nodejsとsolidityのテストコードをそれぞれ別々に実行させたい場合は以下のコマンドを実行する
+nodejs と solidity のテストコードをそれぞれ別々に実行させたい場合は以下のコマンドを実行する
 
 ```bash
 pnpm run test solidity
@@ -42,5 +54,37 @@ Sending L2 transaction
 Transaction sent successfully
 ```
 
+デプロイ
+
+```bash
+pnpm run deploy:Counter
+```
+
+sepolia ネットワークにデプロイする場合
+
+```bash
+pnpm run deploy:Counter --network sepolia
+```
+
+```bash
+✔ Confirm deploy to network sepolia (11155111)? … yes
+Hardhat Ignition 🚀
+
+Deploying [ CounterModule ]
+
+Batch #1
+  Executed CounterModule#Counter
+
+Batch #2
+  Executed CounterModule#Counter.incBy
+
+[ CounterModule ] successfully deployed 🚀
+
+Deployed Addresses
+
+CounterModule#Counter - 0x59C289A1b7394C93F9CAbb5C4dbB6D084aa1dC7F
+```
+
 ## 参考文献
+
 - [Getting started with Hardhat 3](https://hardhat.org/docs/getting-started)
